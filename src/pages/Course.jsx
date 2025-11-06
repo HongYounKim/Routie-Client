@@ -2,13 +2,16 @@
 import { Layout } from "../components/layout/layout";
 import { BottomSheet } from "../components/home/BottomSheet";
 import { MapArea } from "../components/home/MapArea";
+import { CourseListSection } from "../components/course/CourseListSection";
 
 export const Course = () => {
   // const { id } = useParams();
   return (
     <Layout type="back" text="코스이름">
       <MapArea />
-      <BottomSheet></BottomSheet>
+      <BottomSheet>
+        <CourseListSection />
+      </BottomSheet>
     </Layout>
   );
 };

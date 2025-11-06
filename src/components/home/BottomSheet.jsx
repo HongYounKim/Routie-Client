@@ -53,17 +53,16 @@ export const BottomSheet = ({ children }) => {
         touchAction: "none",
         height: SHEET_OPEN,
       }}
-      className="fixed bottom-0 left-0 w-full bg-white rounded-t-2xl shadow-2xl z-7"
+      className="fixed bottom-0 left-0 w-full bg-[var(--color-bgwht)] rounded-t-2xl shadow-2xl z-7 "
     >
       {/* 핸들바 */}
       <div
-        className="flex justify-center items-center cursor-pointer"
+        className="flex justify-center items-center cursor-pointer bg-[#F4F4F5] border-t-[0.5px] border-[#858282] "
         onClick={toggle}
         style={{
           height: BAR_HEIGHT,
           borderTopLeftRadius: "1rem",
           borderTopRightRadius: "1rem",
-          background: "white",
         }}
       >
         <div className="w-15 h-[3px] bg-gray-300 rounded-full" />
