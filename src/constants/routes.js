@@ -5,4 +5,6 @@ export const ROUTES = {
   UPLOAD: "/upload",
   SEARCH: "/search",
   COURSE: "/course/:id",
+  ROUTEMAKE: "/routemake",
+  ADDROUTE: "/addroute"
 };
