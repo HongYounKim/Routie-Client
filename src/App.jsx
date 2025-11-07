@@ -7,9 +7,11 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Search } from "./pages/Search";
 import { Layout } from "./components/layout/layout";
+import { Course } from "./pages/Course";
 import Routemake from './components/newroute/Routemake'
 import Placesearch from "./components/newroute/Placesearch";
 import Addroute from "./components/newroute/Addroute";
+
 
 function App() {
   return (
@@ -18,13 +20,12 @@ function App() {
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.MYPAGE} element={<MyPage />} />
         <Route path={ROUTES.SEARCH} element={<Search />} />
-
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.UPLOAD} element={<Upload />} />
-
+        <Route path={ROUTES.COURSE} element={<Course />} />
         <Route path={ROUTES.ROUTEMAKE} element={<Routemake/>} />
         <Route path="/placesearch" element={<Placesearch />} />
-         <Route path={ROUTES.ADDROUTE} element={<Addroute/>} />
+        <Route path={ROUTES.ADDROUTE} element={<Addroute/>} />
       </Routes>
     </BrowserRouter>
   );
