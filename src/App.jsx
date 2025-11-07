@@ -12,6 +12,8 @@ import Routemake from "./components/newroute/Routemake";
 import Placesearch from "./components/newroute/Placesearch";
 import Addroute from "./components/newroute/Addroute";
 import { PlaceDetailPage } from "./pages/PlaceDetailPage";
+import Uploading from "./components/newroute/uploading";
+
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
         <Route path={ROUTES.PLACE} element={<PlaceDetailPage />} />
         <Route path={ROUTES.ROUTEMAKE} element={<Routemake />} />
         <Route path="/placesearch" element={<Placesearch />} />
-        <Route path={ROUTES.ADDROUTE} element={<Addroute />} />
+         <Route path={ROUTES.ADDROUTE} element={<Addroute/>} />
+         <Route path="/uploading" element={<Uploading />} />
       </Routes>
     </BrowserRouter>
   );
