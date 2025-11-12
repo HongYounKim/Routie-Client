@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import sampleImg from "../../assets/images/sampleCourseImg.png";
 
-export const CourseItemBox = ({ courseId, placeId }) => {
+export const CourseItemBox = ({ courseId, placeId, placedata }) => {
   const navigate = useNavigate();
-  console.log({ courseId, placeId });
 
   return (
     <div
@@ -16,12 +15,12 @@ export const CourseItemBox = ({ courseId, placeId }) => {
           <p
             className={`bg-pink text-white text-[8px] font-light rounded-[16px] px-[6px] py-[2px] `}
           >
-            음식점
+            {placedata.category}
           </p>
-          <h4 className="font-semibold text-4">서브웨이 충무로역</h4>
+          <h4 className="font-semibold text-4">{placedata.name}</h4>
         </div>
         <p className="typo-small text-[var(--color-shadow)]">
-          중구 장충동 12번길-34
+          {placedata.address}
         </p>
       </div>
     </div>

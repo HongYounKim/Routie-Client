@@ -1,4 +1,5 @@
 import { useRoutes } from "../../hooks/useRoutes";
+import { CourseBoxSkeleton } from "../skeleton/CourseBoxSkeleton";
 import { CourseBox } from "./CourseBox";
 
 export const HomeCourseSection = () => {
