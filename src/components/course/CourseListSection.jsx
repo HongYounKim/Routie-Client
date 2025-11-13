@@ -5,11 +5,26 @@ import saveIcon from "../../assets/icons/saveIcon.svg";
 import saveIconWhite from "../../assets/icons/saveIconWhite.svg";
 import shareIcon from "../../assets/icons/shareIcon.svg";
 import { useState } from "react";
+import { useSaveRoute, useUnsaveRoute } from "../../api/routes";
 
 export const CourseListSection = ({ onClick, coursedata }) => {
   const [save, setSave] = useState(false);
 
+  const { mutate: saveRoute } = useSaveRoute();
+  const { mutate: unsaveRoute } = useUnsaveRoute();
+
   const SAVEICON = save ? saveIconWhite : saveIcon;
+
+  const handleClick = () => {
+    const willSave = !save;
+    setSave(willSave);
+    if (willSave) {
+      saveRoute(coursedata.routeId);
+    } else {
+      unsaveRoute(coursedata.routeId);
+    }
+  };
+
   return (
     <div className="px-[23px] pt-2 h-[calc(100%-40px)] overflow-y-auto pb-60">
       <div className=" gap-5 flex flex-col pb-10">
@@ -58,7 +73,7 @@ export const CourseListSection = ({ onClick, coursedata }) => {
           className={`flex items-center border-[0.5px] border-[var(--color-gray)] py-[5.5px] px-[30px] rounded-[8px] gap-[7px] ${
             save ? "bg-[#444] text-white" : ""
           }`}
-          onClick={() => setSave(!save)}
+          onClick={handleClick}
         >
           Save
           <img src={SAVEICON} alt="save" className="text-white" />
