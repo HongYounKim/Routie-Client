@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { axiosInstance } from "./axiosInstance";
 
 export const getRoutes = async () => {
@@ -19,6 +19,35 @@ export function useCreateRoute() {
     },
     onError: (err) => {
       console.error("코스 저장 실패:", err);
+    },
+  });
+}
+
+export function useSaveRoute() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (routeId) => {
+      const res = await axiosInstance.post(`/routes/${routeId}/save`);
+      return res.data;
+    },
+    onSuccess: () => {
+      console.log("루트 저장 완료!");
+      queryClient.invalidateQueries(["savedRoutes"]);
+    },
+  });
+}
+
+export function useUnsaveRoute() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (routeId) => {
+      const res = await axiosInstance.delete(`/routes/${routeId}/save`);
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["savedRoutes"]);
     },
   });
 }
