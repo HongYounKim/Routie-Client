@@ -14,13 +14,15 @@ export const CourseItemBox = ({ courseId, placedata }) => {
       <div className="flex flex-col gap-1">
         <div className="flex gap-[5px] items-center">
           <p
-            className={`text-white text-[8px] font-light rounded-[16px] px-[6px] py-[2px] ${getCategoryColor(
+            className={`text-white text-[8px] font-light rounded-[16px] px-[6px] py-[2px]  whitespace-nowrap flex-shrink-0 ${getCategoryColor(
               category
             )}`}
           >
             {category}
           </p>
-          <h4 className="font-semibold text-4">{placedata.name}</h4>
+          <h4 className="font-semibold text-4 line-clamp-1">
+            {placedata.name.split("(")[0]}
+          </h4>
         </div>
         <p className="typo-small text-[var(--color-shadow)]">
           {placedata.address}
