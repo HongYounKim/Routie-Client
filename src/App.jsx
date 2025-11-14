@@ -13,8 +13,8 @@ import Routemake from "./components/newroute/Routemake";
 import Placesearch from "./components/newroute/Placesearch";
 import Addroute from "./components/newroute/Addroute";
 import { PlaceDetailPage } from "./pages/PlaceDetailPage";
-import Uploading from "./components/newroute/uploading";
 import { Routies } from "./pages/Routies";
+import Uploading from "./components/newroute/Uploading";
 import RoutieAIChatPage from "./pages/RoutieAIChatPage";
 import RoutieChatBanner from "./pages/RoutieChatBanner";
 
